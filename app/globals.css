@@ -1,16 +1,25 @@
 :root {
-  --navy: oklch(17% 0.055 258);
-  --navy-soft: oklch(23% 0.058 257);
-  --royal: oklch(53% 0.255 260);
-  --royal-dark: oklch(43% 0.22 260);
-  --sky: oklch(88% 0.075 245);
-  --ice: oklch(94% 0.035 246);
-  --lavender-blue: oklch(90% 0.07 279);
-  --white: oklch(99% 0.004 250);
-  --canvas: oklch(96% 0.009 250);
-  --ink: oklch(18% 0.04 252);
-  --muted: oklch(43% 0.03 252);
-  --line: oklch(82% 0.018 250);
+  /* primitives charte IN/DEV — hex littéraux, mélange en oklch via color-mix */
+  --obsidian: #0b0e14;
+  --graphite: #1a2130;
+  --ivory: #f3f0e8;
+  --lime: #c7e844;
+  --indigo: #5b63ff;
+  --steel: #8a93a4;
+  --paper: #ffffff;
+
+  /* alias transitoires — étape 2 les remplace par les portées de surface */
+  --navy: var(--obsidian);
+  --navy-soft: var(--graphite);
+  --royal: var(--indigo);
+  --royal-dark: color-mix(in oklch, var(--indigo) 72%, black);
+  --sky: var(--steel);
+  --white: var(--ivory);
+  --canvas: var(--ivory);
+  --ink: var(--obsidian);
+  --muted: rgba(11, 14, 20, 0.6);
+  --line: rgba(11, 14, 20, 0.14);
+
   --font-body: var(--font-jakarta), "Segoe UI", sans-serif;
   --font-display: var(--font-jakarta), "Segoe UI", sans-serif;
   --header: 80px;
@@ -633,7 +642,7 @@ p {
   flex-direction: column;
   height: min(340px, 46svh);
   padding: 2rem 1.75rem;
-  background: var(--white);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 18px;
   text-align: left;
@@ -730,7 +739,7 @@ p {
 .tone-royal,
 .tone-deep { --card: var(--navy); --visual: var(--navy-soft); --card-ink: var(--white); }
 .tone-white,
-.tone-ice { --card: var(--white); --visual: var(--canvas); --card-ink: var(--ink); }
+.tone-ice { --card: var(--paper); --visual: var(--canvas); --card-ink: var(--ink); }
 
 .project-info {
   display: flex;
@@ -880,7 +889,7 @@ p {
 
 .mockup-window {
   width: min(880px, 94%);
-  background: var(--white);
+  background: var(--paper);
   border: 1px solid color-mix(in oklch, var(--navy) 18%, transparent);
   border-radius: 14px;
   box-shadow: 0 26px 60px color-mix(in oklch, var(--navy) 32%, transparent);
@@ -903,7 +912,7 @@ p {
   gap: 0.35rem;
   height: 32px;
   padding-inline: 0.75rem;
-  background: var(--white);
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 
@@ -927,7 +936,7 @@ p {
 .mockup-screen {
   position: relative;
   aspect-ratio: 16 / 10;
-  background: var(--white);
+  background: var(--paper);
   overflow: hidden;
 }
 
@@ -944,7 +953,7 @@ p {
 .mockup-screen::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, color-mix(in oklch, black 82%, transparent), color-mix(in oklch, black 28%, transparent) 46%, transparent 78%);
+  background: linear-gradient(to top, color-mix(in oklch, var(--obsidian) 88%, transparent), color-mix(in oklch, var(--obsidian) 30%, transparent) 46%, transparent 78%);
   content: "";
   opacity: 1;
   pointer-events: none;
@@ -1003,7 +1012,7 @@ p {
   min-height: 270px;
   flex-direction: column;
   padding: 1.5rem;
-  background: var(--white);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 18px;
 }
@@ -1158,7 +1167,7 @@ p {
   min-height: 540px;
   flex-direction: column;
   padding: 1.8rem;
-  background: var(--white);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 18px;
 }
