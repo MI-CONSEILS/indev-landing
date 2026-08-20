@@ -34,11 +34,14 @@
 .case-mockup, .case-story {
   --accent: var(--indigo);
   --accent-ink: var(--paper);
+  /* l'indigo pur fait 3.95:1 sur ivoire — trop faible pour du texte 11px */
+  --accent-text: color-mix(in oklch, var(--indigo) 62%, var(--obsidian));
 }
 
 .hero, .manifesto, .clients, .work, .proof, .engagements, .cta-section, .cta-banner, .case-hero, .next-project, .mobile-nav {
   --accent: var(--lime);
   --accent-ink: var(--obsidian);
+  --accent-text: var(--lime);
 }
 
 * {
@@ -601,7 +604,7 @@ p {
 
 .section-index {
   margin: 0 0 1.4rem;
-  color: var(--accent);
+  color: var(--accent-text, var(--accent));
   font-family: var(--font-mono);
   font-size: 0.69rem;
   font-weight: 500;
@@ -1528,7 +1531,7 @@ p {
 .case-story span {
   display: block;
   margin-bottom: 2rem;
-  color: var(--royal);
+  color: var(--accent-text, var(--accent));
   font-size: 0.72rem;
   font-weight: 700;
 }
