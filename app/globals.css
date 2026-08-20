@@ -12,7 +12,6 @@
   --navy: var(--obsidian);
   --navy-soft: var(--graphite);
   --royal: var(--indigo);
-  --royal-dark: color-mix(in oklch, var(--indigo) 72%, black);
   --sky: var(--steel);
   --white: var(--ivory);
   --canvas: var(--ivory);
@@ -26,6 +25,19 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --z-sticky: 30;
   --z-menu: 40;
+}
+
+/* portées d'accent : lime = signal sur sombre, indigo = structure sur clair */
+:root,
+.manifesto, .clients, .services, .proof, .method, .engagements, .faq, .footer,
+.case-mockup, .case-story {
+  --accent: var(--indigo);
+  --accent-ink: var(--paper);
+}
+
+.hero, .work, .cta-section, .cta-banner, .case-hero, .next-project, .mobile-nav {
+  --accent: var(--lime);
+  --accent-ink: var(--obsidian);
 }
 
 * {
@@ -98,13 +110,13 @@ p {
 }
 
 :focus-visible {
-  outline: 2px solid var(--royal);
+  outline: 2px solid var(--accent, var(--indigo));
   outline-offset: 4px;
 }
 
 ::selection {
-  color: var(--white);
-  background: var(--royal);
+  color: var(--obsidian);
+  background: var(--lime);
 }
 
 .shell {
@@ -736,10 +748,8 @@ p {
 }
 
 /* ponytail: deux tons seulement — clair et navy — le royal reste un accent */
-.tone-royal,
-.tone-deep { --card: var(--navy); --visual: var(--navy-soft); --card-ink: var(--white); }
-.tone-white,
-.tone-ice { --card: var(--paper); --visual: var(--canvas); --card-ink: var(--ink); }
+.tone-dark { --card: var(--navy); --visual: var(--navy-soft); --card-ink: var(--white); }
+.tone-light { --card: var(--paper); --visual: var(--canvas); --card-ink: var(--ink); }
 
 .project-info {
   display: flex;
@@ -919,11 +929,11 @@ p {
 .mockup-bar span {
   width: 7px;
   height: 7px;
-  background: var(--royal);
+  background: color-mix(in oklch, var(--steel) 75%, var(--obsidian));
   border-radius: 50%;
 }
 
-.mockup-bar span:nth-child(2) { background: color-mix(in oklch, var(--royal) 45%, var(--line)); }
+.mockup-bar span:nth-child(2) { background: color-mix(in oklch, var(--steel) 55%, var(--line)); }
 .mockup-bar span:nth-child(3) { background: var(--line); }
 
 .mockup-bar b {
@@ -1349,8 +1359,8 @@ p {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--royal);
-  box-shadow: 0 0 18px var(--royal);
+  background: var(--accent);
+  box-shadow: 0 0 18px var(--accent);
 }
 
 .cta-copy h2 {
@@ -1378,9 +1388,9 @@ p {
 }
 
 .cta-button:hover {
-  color: var(--white);
-  background: var(--royal);
-  box-shadow: 0 0 0 1px color-mix(in oklch, var(--sky) 40%, transparent), 0 18px 54px color-mix(in oklch, var(--royal) 60%, transparent);
+  color: var(--accent-ink);
+  background: var(--accent);
+  box-shadow: 0 18px 54px color-mix(in oklch, var(--accent) 35%, transparent);
   transform: translateY(-2px);
 }
 
@@ -1539,14 +1549,6 @@ p {
   background-size: 11px 11px;
 }
 
-.case-hero.tone-royal {
-  background-color: var(--royal-dark);
-}
-
-.case-hero.tone-deep {
-  background-color: var(--navy);
-}
-
 .case-hero-inner {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
@@ -1640,8 +1642,10 @@ p {
 }
 
 .case-scope {
+  --accent: var(--lime);
+  --accent-ink: var(--obsidian);
   color: var(--white);
-  background: var(--royal);
+  background: var(--graphite);
 }
 
 .case-scope .shell {

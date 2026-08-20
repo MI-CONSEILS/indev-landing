@@ -8,7 +8,7 @@ export type Project = {
   url: string;
   logo: string;
   shot: string;
-  tone: string;
+  tone: "dark" | "light";
   facts: [string, string][];
   scope: string[];
   challenge: string;
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     description:
       "Une solution NFC pour appeler un serveur, demander l’addition, commander et piloter l’activité depuis un back-office complet.",
     url: "https://thetagpoint.com/",
-    tone: "deep",
+    tone: "dark",
     facts: [
       ["Produit", "SaaS + NFC"],
       ["Marché", "France"],
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description:
       "Un produit national qui rassemble entreprises, opportunités ciblées, annuaire qualifié et matching intelligent.",
     url: "https://bastp.indevtech.dev/",
-    tone: "ice",
+    tone: "light",
     facts: [
       ["Produit", "Plateforme B2B"],
       ["Marché", "Algérie"],
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       "Une plateforme qui réunit services à domicile, expériences, mobilité et avantages dans une présence digitale cohérente.",
     url: "https://wajed-algerie.com/",
-    tone: "white",
+    tone: "light",
     facts: [
       ["Produit", "Super app"],
       ["Marché", "Algérie"],
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     description:
       "Une expérience produit claire et accessible pour présenter un système de guidage qui libère l’ouïe grâce à deux bracelets vibrants.",
     url: "https://www.n-vibe.com/",
-    tone: "sky",
+    tone: "light",
     facts: [
       ["Produit", "GPS haptique"],
       ["Marché", "France"],
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     description:
       "Une vitrine e-commerce française dense et immersive pour présenter Circular Ring 2, ses biomarqueurs et son coach santé Kira.",
     url: "https://fr.circular.xyz/",
-    tone: "royal",
+    tone: "dark",
     facts: [
       ["Produit", "Smart ring"],
       ["Marché", "France"],
