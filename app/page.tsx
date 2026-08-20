@@ -7,14 +7,6 @@ import { MAILTO } from "@/lib/brand";
 import { projects } from "@/lib/projects";
 
 
-const faqs = [
-  ["Quels types de projets réalisez-vous ?", "Nous concevons des ERP, CRM, plateformes métier, sites web, e-commerce et landing pages, du cadrage à la mise en ligne."],
-  ["Travaillez-vous à partir d’un produit existant ?", "Oui. Nous pouvons auditer l’existant, reprendre une interface, moderniser une base technique ou développer un nouveau module sans repartir de zéro."],
-  ["Combien de temps faut-il pour lancer un projet ?", "Une landing page peut être livrée en quelques semaines. Un produit métier demande un cadrage adapté à son périmètre, ses intégrations et ses règles de gestion."],
-  ["Pouvez-vous connecter nos outils actuels ?", "Oui. Nous intégrons les APIs, paiements, services d’authentification et sources de données déjà utilisés par votre équipe."],
-  ["Que se passe-t-il après la mise en ligne ?", "Nous assurons le suivi, les correctifs, la mesure des usages et les évolutions prioritaires selon le rythme convenu."],
-  ["Comment démarrer ?", "Envoyez-nous votre contexte, votre objectif et les contraintes connues. Nous revenons vers vous avec les prochaines décisions à prendre."],
-];
 
 const processSteps = [
   ["Comprendre", "Nous cadrons vos objectifs, vos utilisateurs et les flux métier qui feront réellement la différence."],
@@ -51,6 +43,7 @@ export default function Home() {
 
       <section className="manifesto section-pad">
         <div className="manifesto-inner shell">
+          <p className="section-index">01 / Positionnement</p>
           <h2>Nous aidons les entreprises à remplacer les outils dispersés par des produits clairs, rapides et construits pour leur façon de travailler.</h2>
         </div>
       </section>
@@ -85,6 +78,7 @@ export default function Home() {
       <section className="work" id="projets">
         <div className="work-head shell">
           <div>
+            <p className="section-index">03 / Réalisations</p>
             <h2>Nos réalisations</h2>
             <p>Des produits accessibles, des plateformes métier et des expériences e-commerce conçus pour des usages concrets.</p>
           </div>
@@ -120,24 +114,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof section-pad">
-        <div className="proof-head shell">
-          <div>
-            <h2>La même exigence du premier écran au dernier déploiement</h2>
-          </div>
-          <p>Nous réunissons produit, design et développement dans une équipe qui garde le contexte du début à la fin.</p>
-        </div>
-        <div className="proof-grid shell">
-          <div><span>PROJETS PRÉSENTÉS</span><strong>5</strong><p>Des références en France et en Algérie, du produit accessible à la plateforme industrielle.</p></div>
-          <div><span>APPROCHE</span><strong>100%</strong><p>Chaque interface et chaque règle métier sont adaptées au contexte du projet.</p></div>
-          <div><span>EXPERTISES</span><strong>Web + Métier</strong><p>Le même niveau de soin pour la logique opérationnelle et l’expérience visible.</p></div>
-          <div><span>CONTINUITÉ</span><strong>1 équipe</strong><p>Un échange direct entre cadrage, design, développement et suivi.</p></div>
-        </div>
-      </section>
-
       <section className="method section-pad" id="methode">
         <div className="method-inner shell">
           <div className="section-title">
+            <p className="section-index">04 / Méthode</p>
             <h2>De la complexité à la clarté en 3 étapes</h2>
           </div>
           <ol className="method-list">
@@ -152,9 +132,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="proof section-pad">
+        <div className="proof-head shell">
+          <div>
+            <p className="section-index">05 / Écosystème IN</p>
+            <h2>La branche technologique de l’univers Maison IN</h2>
+          </div>
+          <p>Produit, design et développement réunis dans une équipe qui garde le contexte du début à la fin, adossée aux autres expertises du groupe.</p>
+        </div>
+        <div className="proof-grid shell">
+          <div><span>PROJETS PRÉSENTÉS</span><strong>5</strong><p>Des références en France et en Algérie, du produit accessible à la plateforme industrielle.</p></div>
+          <div><span>APPROCHE</span><strong>100%</strong><p>Chaque interface et chaque règle métier sont adaptées au contexte du projet.</p></div>
+          <div><span>EXPERTISES</span><strong>Web + Métier</strong><p>Le même niveau de soin pour la logique opérationnelle et l’expérience visible.</p></div>
+          <div><span>CONTINUITÉ</span><strong>1 équipe</strong><p>Un échange direct entre cadrage, design, développement et suivi.</p></div>
+        </div>
+      </section>
+
       <section className="engagements section-pad">
         <div className="engagement-head shell">
           <div>
+            <p className="section-index">06 / Contact</p>
             <h2>Trois façons de travailler avec nous</h2>
           </div>
           <p>Le périmètre s’adapte au produit. Le niveau d’attention reste le même.</p>
@@ -181,24 +178,6 @@ export default function Home() {
             <a href={`${MAILTO}?subject=Renfort%20produit`}>Échanger avec l’équipe <Arrow /></a>
             <ul><li>Audit technique</li><li>Refonte d’interface</li><li>Nouvelles fonctionnalités</li><li>Performance</li><li>Suivi continu</li></ul>
           </article>
-        </div>
-      </section>
-
-      <section className="faq section-pad">
-        <div className="faq-grid shell">
-          <div className="faq-intro">
-            <h2>Les réponses avant le premier échange</h2>
-            <p>Votre contexte est particulier. Ces réponses couvrent les questions de départ.</p>
-            <a href={MAILTO}>Une autre question&nbsp;? Écrivez-nous. <Arrow /></a>
-          </div>
-          <div className="faq-list">
-            {faqs.map(([question, answer]) => (
-              <details key={question}>
-                <summary>{question}<span aria-hidden="true">+</span></summary>
-                <p>{answer}</p>
-              </details>
-            ))}
-          </div>
         </div>
       </section>
 

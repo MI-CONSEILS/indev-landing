@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Arrow, Logo } from "@/components/site";
 import { MAILTO } from "@/lib/brand";
 
@@ -14,16 +14,34 @@ const links = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const progress = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > window.innerHeight * 0.78);
+    // ponytail: scaleX + hauteur mise en cache — pas de layout par frame
+    let max = document.documentElement.scrollHeight - window.innerHeight;
+    const measure = () => { max = document.documentElement.scrollHeight - window.innerHeight; };
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      setScrolled(window.scrollY > 36);
+      if (progress.current) {
+        progress.current.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+      }
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", measure);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
-    <header className={`header ${scrolled ? "header-light" : ""}`}>
+    <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
+      <div className="scroll-progress" aria-hidden="true"><span ref={progress} /></div>
       <div className="header-inner shell">
         <Logo />
         <nav className="desktop-nav" aria-label="Navigation principale">

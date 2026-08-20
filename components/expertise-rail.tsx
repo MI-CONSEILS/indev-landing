@@ -72,6 +72,7 @@ export function ExpertiseRail() {
   return (
     <section className="services" id="expertises" ref={section}>
       <div className="section-title shell">
+        <p className="section-index">02 / Expertises</p>
         <h2>Tout ce qu’il faut pour passer de l’idée au produit</h2>
       </div>
       <div className="services-viewport">
