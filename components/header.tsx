@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Arrow, Logo } from "@/components/site";
+import { MAILTO } from "@/lib/brand";
 
 const links = [
   ["EXPERTISES", "/#expertises"],
@@ -34,7 +35,7 @@ export function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          <a className="contact-link" href="mailto:contact@indevtech.dev">CONTACT</a>
+          <a className="contact-link" href={MAILTO}>CONTACT</a>
           <button
             type="button"
             className="menu-button"

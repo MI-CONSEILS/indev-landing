@@ -4,6 +4,7 @@ import { ExpertiseRail } from "@/components/expertise-rail";
 import { Header } from "@/components/header";
 import { HeroOrbit } from "@/components/hero-orbit";
 import { Arrow, Footer, Mockup } from "@/components/site";
+import { MAILTO } from "@/lib/brand";
 import { projects } from "@/lib/projects";
 
 
@@ -42,7 +43,7 @@ export default function Home() {
               <strong>IN-DEV / STUDIO PRODUIT</strong>
             </div>
             <p>ERP, CRM et expériences web conçus autour de vos usages, de vos équipes et de vos objectifs.</p>
-            <a className="hero-contact" href="mailto:contact@indevtech.dev">
+            <a className="hero-contact" href={MAILTO}>
               Parler du projet <Arrow />
             </a>
           </div>
@@ -164,21 +165,21 @@ export default function Home() {
             <h3>Produit métier</h3>
             <strong>Sur devis</strong>
             <p>ERP, CRM, portail ou plateforme construits autour de vos flux.</p>
-            <a href="mailto:contact@indevtech.dev?subject=Projet%20métier">Décrire le produit <Arrow /></a>
+            <a href={`${MAILTO}?subject=Projet%20métier`}>Décrire le produit <Arrow /></a>
             <ul><li>Cadrage fonctionnel</li><li>Design UI/UX</li><li>Développement</li><li>Intégrations</li><li>Maintenance</li></ul>
           </article>
           <article className="engagement-featured">
             <h3>Site & landing page</h3>
             <strong>Sur devis</strong>
             <p>Une présence digitale rapide, claire et pensée pour la conversion.</p>
-            <a href="mailto:contact@indevtech.dev?subject=Projet%20web">Présenter le besoin <Arrow /></a>
+            <a href={`${MAILTO}?subject=Projet%20web`}>Présenter le besoin <Arrow /></a>
             <ul><li>Direction créative</li><li>Contenu et structure</li><li>Développement responsive</li><li>SEO technique</li><li>Mise en ligne</li></ul>
           </article>
           <article>
             <h3>Évolution & renfort</h3>
             <strong>Sur mesure</strong>
             <p>Un appui ciblé pour reprendre, accélérer ou fiabiliser un produit.</p>
-            <a href="mailto:contact@indevtech.dev?subject=Renfort%20produit">Échanger avec l’équipe <Arrow /></a>
+            <a href={`${MAILTO}?subject=Renfort%20produit`}>Échanger avec l’équipe <Arrow /></a>
             <ul><li>Audit technique</li><li>Refonte d’interface</li><li>Nouvelles fonctionnalités</li><li>Performance</li><li>Suivi continu</li></ul>
           </article>
         </div>
@@ -189,7 +190,7 @@ export default function Home() {
           <div className="faq-intro">
             <h2>Les réponses avant le premier échange</h2>
             <p>Votre contexte est particulier. Ces réponses couvrent les questions de départ.</p>
-            <a href="mailto:contact@indevtech.dev">Une autre question&nbsp;? Écrivez-nous. <Arrow /></a>
+            <a href={MAILTO}>Une autre question&nbsp;? Écrivez-nous. <Arrow /></a>
           </div>
           <div className="faq-list">
             {faqs.map(([question, answer]) => (
