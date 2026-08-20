@@ -19,8 +19,9 @@
   --muted: rgba(11, 14, 20, 0.6);
   --line: rgba(11, 14, 20, 0.14);
 
-  --font-body: var(--font-jakarta), "Segoe UI", sans-serif;
-  --font-display: var(--font-jakarta), "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), system-ui, "Segoe UI", sans-serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
   --header: 80px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --z-sticky: 30;
@@ -99,9 +100,9 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
@@ -297,8 +298,8 @@ p {
   margin: 0 auto;
   font-family: var(--font-display);
   font-size: clamp(3.6rem, 6.8vw, 5.6rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  font-weight: 500;
+  letter-spacing: -0.055em;
   line-height: 0.92;
   text-shadow: 0 2px 30px color-mix(in oklch, var(--navy) 65%, transparent);
   animation: hero-copy 1s var(--ease) both;
@@ -1883,4 +1884,25 @@ p {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* accents techniques : IBM Plex Mono sur tous les micro-labels */
+.hero-coordinate,
+.hero-clock,
+.service-index,
+.project-meta span,
+.project-facts span,
+.project-links a,
+.proof-grid span,
+.mockup-bar b,
+.cta-label,
+.cta-socials a,
+.footer-bottom,
+.case-heading > span,
+.case-facts span,
+.case-story span,
+.next-project span {
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }

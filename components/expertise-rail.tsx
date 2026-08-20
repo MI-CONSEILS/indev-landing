@@ -31,6 +31,8 @@ export function ExpertiseRail() {
     if (window.matchMedia("(max-width: 860px)").matches) return;
 
     gsap.registerPlugin(ScrollTrigger);
+    // les métriques des webfonts changent scrollWidth, donc la distance du rail
+    document.fonts.ready.then(() => ScrollTrigger.refresh());
     const ctx = gsap.context(() => {
       const rail = track.current;
       if (!rail) return;
