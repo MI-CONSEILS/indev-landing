@@ -2,7 +2,6 @@ import Link from "next/link";
 import { LocalClock } from "@/components/clock";
 import { ExpertiseRail } from "@/components/expertise-rail";
 import { Header } from "@/components/header";
-import { HeroOrbit } from "@/components/hero-orbit";
 import { Arrow, Footer, Mockup } from "@/components/site";
 import { MAILTO } from "@/lib/brand";
 import { projects } from "@/lib/projects";
@@ -29,18 +28,18 @@ export default function Home() {
       <Header />
 
       <section className="hero" id="agence">
-        <HeroOrbit />
         <div className="hero-content shell">
+          <p className="hero-eyebrow"><i aria-hidden="true" /> Studio de produits digitaux — Alger</p>
           <h1 className="hero-title">
             <span>Concevoir.</span>
             <span>Construire.</span>
-            <span className="hero-title-plate">Accélérer.</span>
+            <span className="hero-title-accent">Accélérer.</span>
           </h1>
           <div className="hero-bottom">
             <div className="hero-coordinate">
               <LocalClock />
               <span>ALGER · 36°45&apos;N</span>
-              <strong>IN-DEV / STUDIO PRODUIT</strong>
+              <strong>IN/DEV — STUDIO PRODUIT</strong>
             </div>
             <p>ERP, CRM et expériences web conçus autour de vos usages, de vos équipes et de vos objectifs.</p>
             <a className="hero-contact" href={MAILTO}>
